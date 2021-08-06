@@ -5,4 +5,6 @@
 * wait for state be ready
 * select *.dem file
 * click parse and wait
-  
+## preview
+
+![preview](preview.jpg)
