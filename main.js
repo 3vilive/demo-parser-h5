@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	WebAssembly.instantiateStreaming(fetch("demo-parser.wasm"), go.importObject).then((result) => {
 		go.run(result.instance);
 		state('ready')
+		displayProgress(0.0)
 	});
 }, false);
 
@@ -38,6 +39,7 @@ function parseFile() {
             },
             (progress) => {
                 console.log("parsing progress " + progress * 100.0 + "%")
+				displayProgress(progress)
             }
         );
 	};
@@ -46,6 +48,12 @@ function parseFile() {
 
 function state(state) {
 	document.getElementById('state').innerText = state;
+}
+
+function displayProgress(p) {
+	const displsy = "" + p * 100.0 + " %";
+	console.log("displayProgress called displsy: " + displsy)
+	document.getElementById('progress').innerText = displsy;
 }
 
 function ParseStatCallback(err, statsJson) {
