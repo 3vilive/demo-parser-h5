@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="wasm_exec.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<input type="file" id="demofile" name="file" enctype="multipart/form-data"/>
+		<button id="btnParse" onclick="parseFile()">Parse</button>
+		<br>
+		<p>State: <span id="state"></span></p>
+		<h2>Team Counter-Terrorists</h2>
+		<table border="1">
+			<thead>
+				<th>Player</th>
+				<th>Kills</th>
+				<th>Assists</th>
+				<th>Deaths</th>
+				<th>Headshot</th>
+				<th>First Kills</th>
+				<th>First Deaths</th>
+				<th>Damage</th>
+				<th>MVP</th>
+				<th>ADR</th>
+			</thead>
+			<tbody id="ct-stats"></tbody>
+		</table>
+		<h2>Team Terrorists</h2>
+		<table border="1">
+			<thead>
+				<th>Player</th>
+				<th>Kills</th>
+				<th>Assists</th>
+				<th>Deaths</th>
+				<th>Headshot</th>
+				<th>First Kills</th>
+				<th>First Deaths</th>
+				<th>Damage</th>
+				<th>MVP</th>
+				<th>ADR</th>
+			</thead>
+			<tbody id="t-stats"></tbody>
+		</table>
+	</body>
+</html>
